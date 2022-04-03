@@ -4,6 +4,7 @@ const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 
+// find all categories
 router.get('/', (req, res) => {
   Category.findAll({
     include: [
@@ -18,8 +19,6 @@ router.get('/', (req, res) => {
     console.log(err);
     res.status(500).json(err);
   });
-  // find all categories
-  // be sure to include its associated Products
 });
 
 router.get('/:id', (req, res) => {
